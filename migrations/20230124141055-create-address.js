@@ -10,18 +10,23 @@ module.exports = {
         type: Sequelize.INTEGER.UNSIGNED
       },
       cityid: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       userid: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       title: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       address: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       postcode: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

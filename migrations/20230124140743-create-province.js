@@ -10,6 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER.UNSIGNED
       },
       name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {
