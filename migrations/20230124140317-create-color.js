@@ -10,10 +10,12 @@ module.exports = {
         type: Sequelize.INTEGER.UNSIGNED
       },
       hex: {
+        allowNull: false,
         type: Sequelize.STRING,
         unique:true
       },
       name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

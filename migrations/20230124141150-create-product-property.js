@@ -10,12 +10,15 @@ module.exports = {
         type: Sequelize.INTEGER.UNSIGNED
       },
       propertyId: {
+        allowNull: false,
         type: Sequelize.INTEGER.UNSIGNED
       },
       productId: {
+        allowNull: false,
         type: Sequelize.INTEGER.UNSIGNED
       },
       propertyValueId: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {

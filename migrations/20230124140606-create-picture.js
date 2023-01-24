@@ -10,12 +10,14 @@ module.exports = {
         type: Sequelize.INTEGER.UNSIGNED
       },
       url: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       alt: {
         type: Sequelize.STRING
       },
       productVariationId: {
+        allowNull: false,
         type: Sequelize.INTEGER.UNSIGNED
       },
       createdAt: {
