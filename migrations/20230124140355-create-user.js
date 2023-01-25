@@ -13,6 +13,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+     gender: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN
+      },
       username: {
         allowNull: false,
         unique:true,
