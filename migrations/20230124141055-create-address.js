@@ -9,11 +9,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER.UNSIGNED
       },
-      cityid: {
+      cityId: {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      userid: {
+      userId: {
         allowNull: false,
         type: Sequelize.INTEGER
       },

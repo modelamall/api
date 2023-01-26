@@ -19,7 +19,7 @@ module.exports = {
       },
       propertyValueId: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER.UNSIGNED
       },
       createdAt: {
         allowNull: false,
