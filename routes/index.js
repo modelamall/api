@@ -3,8 +3,9 @@ var router = express.Router();
 
 /* GET home page. */
 
-router.use("/admin", require("../lib/admin/router"));
+router.use("/admin", require("../lib/admin/routers"));
 router.use("/user", require("../lib/user/routers"));
 router.use("/store", require("../lib/store/routers"));
+router.use("/category", require("../lib/category/routers"));
 
 module.exports = router;
