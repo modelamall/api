@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes');
+var exampleRouter = require('./example');
 
 var app = express();
 var cors = require("cors");
@@ -23,6 +24,7 @@ app.get('/uploads/:image', (req, res) => {
   res.sendFile(path.join(__dirname, 'uploads', req.params.image));
 });
 
+app.use('/example', exampleRouter);
 app.use('/api/v1', indexRouter);
 
 // catch 404 and forward to error handler
