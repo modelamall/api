@@ -17,11 +17,18 @@ module.exports = (sequelize, DataTypes) => {
       ProductVariation.belongsTo(models.Color, {
         foreignKey: "colorId",
       });
+      ProductVariation.belongsTo(models.ProductVariation, {
+        foreignKey: "parentId",
+      });
+      ProductVariation.hasMany(models.ProductVariation, {
+        foreignKey: "parentId",
+      });
     }
   }
   ProductVariation.init(
     {
       productId: DataTypes.INTEGER,
+      parentId: DataTypes.INTEGER,
       colorId: DataTypes.INTEGER,
       price: DataTypes.INTEGER,
       size: DataTypes.STRING,
