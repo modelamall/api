@@ -12,6 +12,7 @@ router.use("/product", require("../lib/product/routers"));
 router.use("/productVariation", require("../lib/productVariation/routers"));
 router.use("/province", require("../lib/province/routers"));
 router.use("/city", require("../lib/city/routers"));
-router.use("/address", require("../lib/address/routers"));
+router.use("/color", require("../lib/color/routers"));
+//router.use("/address", require("../lib/address/routers"));
 
 module.exports = router;
