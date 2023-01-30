@@ -9,7 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       ProductVariation.hasMany(models.Picture, {
-        foreignKey: "productVariationId",
+        foreignKey: "pictureableId",
+        constraints: false,
+        scope: {
+          pictureableType: "ProductVariation",
+        },
       });
       ProductVariation.belongsTo(models.Product, {
         foreignKey: "productId",

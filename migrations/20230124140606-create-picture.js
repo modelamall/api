@@ -17,7 +17,11 @@ module.exports = {
         allowNull: true,
         type: Sequelize.STRING
       },
-      productVariationId: {
+      pictureableType: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      pictureableId: {
         allowNull: false,
         type: Sequelize.INTEGER.UNSIGNED
       },

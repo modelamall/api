@@ -9,7 +9,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Picture.belongsTo(models.ProductVariation, {
-        foreignKey: "productVariationId",
+        foreignKey: "pictureableId",
+        constraints: false
+      });
+      Picture.belongsTo(models.Product, {
+        foreignKey: "pictureableId",
+        constraints: false
       });
     }
   }
@@ -17,12 +22,29 @@ module.exports = (sequelize, DataTypes) => {
     {
       url: DataTypes.STRING,
       alt: DataTypes.STRING,
-      productVariationId: DataTypes.INTEGER,
+      pictureableId: DataTypes.INTEGER,
+      pictureableType: DataTypes.STRING,
     },
     {
       sequelize,
       modelName: "Picture",
     }
   );
+
+  Picture.addHook("afterFind", findResult => {
+    if (!Array.isArray(findResult)) findResult = [findResult];
+    for (const instance of findResult) {
+      if (instance.pictureableType === "Product" && instance.Product !== undefined) {
+        instance.pictureable = instance.Product;
+      } else if (instance.pictureableType === "ProductVariation" && instance.ProductVariation !== undefined) {
+        instance.pictureable = instance.ProductVariation;
+      }
+      // To prevent mistakes:
+      delete instance.Product;
+      delete instance.dataValues.Product;
+      delete instance.ProductVariation;
+      delete instance.dataValues.ProductVariation;
+    }
+  });
   return Picture;
 };
