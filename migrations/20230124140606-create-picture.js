@@ -14,6 +14,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       alt: {
+        allowNull: true,
         type: Sequelize.STRING
       },
       productVariationId: {

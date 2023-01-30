@@ -13,10 +13,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      parentId: {
-        type: Sequelize.INTEGER,
-        allowNull: true
-      },
       colorId: {
         type: Sequelize.INTEGER,
         allowNull: false
@@ -40,6 +36,11 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      deletedAt: {
+        type: Sequelize.DATE,
+        allowNull: true,
+        defaultValue: null
       }
     });
   },
