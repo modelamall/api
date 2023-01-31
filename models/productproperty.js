@@ -28,6 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "ProductProperty",
+      paranoid: true,
     }
   );
   return ProductProperty;
