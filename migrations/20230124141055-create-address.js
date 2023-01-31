@@ -11,11 +11,7 @@ module.exports = {
       },
       cityId: {
         allowNull: false,
-        type: Sequelize.INTEGER
-      },
-      userId: {
-        allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER.UNSIGNED
       },
       title: {
         allowNull: false,
@@ -27,7 +23,15 @@ module.exports = {
       },
       postcode: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER.UNSIGNED
+      },
+      addressableId: {
+        allowNull: false,
+        type: Sequelize.INTEGER.UNSIGNED
+      },
+      addressableType: {
+        allowNull: false,
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
