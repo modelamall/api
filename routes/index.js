@@ -14,5 +14,6 @@ router.use("/province", require("../lib/province/routers"));
 router.use("/city", require("../lib/city/routers"));
 router.use("/color", require("../lib/color/routers"));
 router.use("/address", require("../lib/address/routers"));
+router.use("/filter", require("../lib/filter/routers"));
 
 module.exports = router;
