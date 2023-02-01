@@ -9,7 +9,7 @@ router.use("/store", require("../lib/store/routers"));
 router.use("/category", require("../lib/category/routers"));
 router.use("/productCode", require("../lib/productCode/routers"));
 router.use("/product", require("../lib/product/routers"));
-router.use("/productVariation", require("../lib/productVariation/routers"));
+router.use("/productvariation", require("../lib/productVariation/routers"));
 router.use("/province", require("../lib/province/routers"));
 router.use("/city", require("../lib/city/routers"));
 router.use("/color", require("../lib/color/routers"));
