@@ -12,7 +12,6 @@ module.exports = {
       hex: {
         allowNull: false,
         type: Sequelize.STRING,
-        unique:true
       },
       name: {
         allowNull: false,
