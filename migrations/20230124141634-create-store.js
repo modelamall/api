@@ -16,12 +16,10 @@ module.exports = {
       username: {
         allowNull: false,
         type: Sequelize.STRING,
-        unique:true
       },
       email: {
         allowNull: false,
         type: Sequelize.STRING,
-        unique:true
       },
       password: {
         allowNull: false,
@@ -30,7 +28,6 @@ module.exports = {
       phone: {
         allowNull: false,
         type: Sequelize.STRING,
-        unique:true
       },
       logo: {
         allowNull: false,
