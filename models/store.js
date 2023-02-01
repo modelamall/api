@@ -11,8 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Store.hasOne(models.Address, {
-        foreignKey: "userId",
-        as:"Store"
+        foreignKey: "addressableId",
+        constraints: false,
+        scope: {
+          addressableType: "User",
+        },
       });
       Store.hasMany(models.Product, {
         foreignKey: "storeId",

@@ -9,8 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Admin.hasOne(models.Address, {
-        foreignKey: "userId",
-        as:"Admin"
+        foreignKey: "addressableId",
+        constraints: false,
+        scope: {
+          addressableType: "Admin",
+        },
       });
     }
   }

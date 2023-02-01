@@ -12,16 +12,25 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "cityId",
       });
       Address.belongsTo(models.User, {
-        foreignKey: "userId",
-        as: "User",
+        foreignKey: "addressableId",
+        constraints: false,
+        scope: {
+          addressableType: "User",
+        },
       });
       Address.belongsTo(models.Admin, {
-        foreignKey: "userId",
-        as: "Admin",
+        foreignKey: "addressableId",
+        constraints: false,
+        scope: {
+          addressableType: "Admin",
+        },
       });
       Address.belongsTo(models.Store, {
-        foreignKey: "userId",
-        as: "Store",
+        foreignKey: "addressableId",
+        constraints: false,
+        scope: {
+          addressableType: "Store",
+        },
       });
     }
   }

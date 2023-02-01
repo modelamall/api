@@ -9,8 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       User.hasMany(models.Address, {
-        foreignKey: "userId",
-        as:"User"
+        foreignKey: "addressableId",
+        constraints: false,
+        scope: {
+          addressableType: "User",
+        },
       });
     }
   }
