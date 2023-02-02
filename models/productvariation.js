@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "ProductVariation",
-      paranoid: false,
+      paranoid: true,
     }
   );
   return ProductVariation;

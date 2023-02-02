@@ -28,22 +28,23 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Picture",
+      paranoid: true,
     }
   );
 
   Picture.addHook("afterFind", findResult => {
     if (!Array.isArray(findResult)) findResult = [findResult];
     for (const instance of findResult) {
-      if (instance.pictureableType === "Product" && instance.Product !== undefined) {
+      if (instance?.pictureableType === "Product" && instance.Product !== undefined) {
         instance.pictureable = instance.Product;
-      } else if (instance.pictureableType === "ProductVariation" && instance.ProductVariation !== undefined) {
+      } else if (instance?.pictureableType === "ProductVariation" && instance.ProductVariation !== undefined) {
         instance.pictureable = instance.ProductVariation;
       }
       // To prevent mistakes:
-      delete instance.Product;
-      delete instance.dataValues.Product;
-      delete instance.ProductVariation;
-      delete instance.dataValues.ProductVariation;
+      delete instance?.Product;
+      delete instance?.dataValues.Product;
+      delete instance?.ProductVariation;
+      delete instance?.dataValues.ProductVariation;
     }
   });
   return Picture;
