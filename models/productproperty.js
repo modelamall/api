@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
   ProductProperty.init(
     {
       propertyId: DataTypes.INTEGER,
-      productId: DataTypes.INTEGER,
+      productVariationId: DataTypes.INTEGER,
       propertyValueId: DataTypes.INTEGER,
     },
     {
