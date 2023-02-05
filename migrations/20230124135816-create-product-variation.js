@@ -13,17 +13,9 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      colorId: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
       price: {
         type: Sequelize.INTEGER,
         allowNull: false
-      },
-      size: {
-        type: Sequelize.STRING,
-        allowNull: true
       },
       count: {
         type: Sequelize.INTEGER,

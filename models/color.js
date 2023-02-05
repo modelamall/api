@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "Color",
+      paranoid: true,
     }
   );
   return Color;

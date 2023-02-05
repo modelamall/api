@@ -13,7 +13,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER.UNSIGNED
       },
-      productId: {
+      productVariationId: {
         allowNull: false,
         type: Sequelize.INTEGER.UNSIGNED
       },

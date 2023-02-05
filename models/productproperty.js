@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
       ProductProperty.belongsTo(models.Property, {
         foreignKey: "propertyId",
       });
-      ProductProperty.belongsTo(models.Product, {
-        foreignKey: "productId",
+      ProductProperty.belongsTo(models.ProductVariation, {
+        foreignKey: "productVariationId",
       });
       ProductProperty.belongsTo(models.PropertiesValue, {
         foreignKey: "propertyValueId",
