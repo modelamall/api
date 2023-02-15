@@ -49,6 +49,10 @@ module.exports = {
         propertyId: 5,
       },
       {
+        value: "6",
+        propertyId: 5,
+      },
+      {
         value: "8",
         propertyId: 5,
       },
@@ -67,6 +71,30 @@ module.exports = {
       {
         value: "M2",
         propertyId: 6,
+      },
+      {
+        value: "Purple",
+        propertyId: 1,
+      },
+      {
+        value: "Gold",
+        propertyId: 1,
+      },
+      {
+        value: "Black",
+        propertyId: 1,
+      },
+      {
+        value: "128 GB",
+        propertyId: 8,
+      },
+      {
+        value: "256 GB",
+        propertyId: 8,
+      },
+      {
+        value: "512 GB",
+        propertyId: 8,
       },
     ])
   },
