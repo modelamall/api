@@ -41,6 +41,23 @@ module.exports = {
         name: "Small Home Appliances",
         parentId: 2,
       },
+      {
+        name: "Mobile phone",
+        parentId: 2,
+      },
+      {
+        name: "Computer",
+        parentId: 2,
+      },
+      {
+        name: "Laptop",
+        parentId: 13,
+      },
+      {
+        name: "Tablet",
+        parentId: 2,
+      },
+      
     ])
   },
 
