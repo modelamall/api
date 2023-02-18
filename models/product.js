@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
   Product.init(
     {
       title: DataTypes.STRING,
-      discription: DataTypes.TEXT,
+      description: DataTypes.TEXT,
       codeId: DataTypes.INTEGER,
       categoryId: DataTypes.INTEGER,
       storeId: DataTypes.INTEGER,

@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert("Products", [
       {
         title: "Apple iPhone 14 Pro",
-        discription: `Marka: Apple
+        description: `Marka: Apple
 Ürün ailesi: iPhone
 Ürün serisi: 14 Pro
 Ürün adı: iPhone 14 Pro
