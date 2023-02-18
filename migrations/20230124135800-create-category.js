@@ -13,6 +13,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      icon: {
+        type: Sequelize.STRING,
+      },
       parentId: {
         type: Sequelize.INTEGER.UNSIGNED,
         allowNull: true
