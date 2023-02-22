@@ -1,47 +1,29 @@
 SELECT
-    Products.title,
-    Products.description,
-    Products.categoryId,
-    Products.id AS ID,
-    ProductVariations.price,
-    ProductVariations.count,
-    ProductVariations.productId,
-    ProductVariations.id AS VariationId,
-    Pictures.url
+    *
 FROM
-    Products
-    JOIN ProductVariations ON Products.id = ProductVariations.productId
-    JOIN ProductProperties ON ProductVariations.id = ProductProperties.productVariationId
-    JOIN Pictures ON Products.id = Pictures.pictureableId
-    AND Pictures.pictureableType = 'Product'
+    `products`
 WHERE
-    (
-        ProductVariations.price > 43086
-        AND(
-            EXISTS(
-                SELECT
-                    *
-                FROM
-                    ProductProperties
-                WHERE
-                    ProductProperties.propertyId = 1
-                    AND ProductProperties.propertyValueId IN(18, 19)
-            )
-            AND(
-                EXISTS(
-                    SELECT
-                        *
-                    FROM
-                        ProductProperties
-                    WHERE
-                        ProductProperties.propertyId = 8
-                        AND ProductProperties.propertyValueId IN(21, 22)
-                )
-            )
-        )
+    `categoryId` IN (SELECT id FROM Categories WHERE ID IN(12)) AND EXISTS(
+    SELECT
+        *
+    FROM
+        `productVariations`
+    WHERE
+        `products`.`id` = `productVariations`.`productId` AND(
+            `price` > 4000 AND EXISTS(
+            SELECT
+                *
+            FROM
+                `productProperties`
+            WHERE
+                `productVariations`.`id` = `productProperties`.`productVariationId` AND `propertyId` = 1 AND `propertyValueId` IN(18)
+        ) OR EXISTS(
+        SELECT
+            *
+        FROM
+            `productProperties`
+        WHERE
+            `productVariations`.`id` = `productProperties`.`productVariationId` AND `propertyId` = 8 AND `propertyValueId` IN(22)
     )
-GROUP BY
-    url,
-    ID
-ORDER BY
-    ProductVariations.price ASC;
+        )
+);
