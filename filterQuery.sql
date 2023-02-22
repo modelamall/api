@@ -1,10 +1,10 @@
 SELECT
     *
 FROM
-    `products`
+    products
 -- JOIN
 WHERE
-    `categoryId` IN (
+    categoryId IN (
         SELECT
             id
         FROM
@@ -16,30 +16,30 @@ WHERE
         SELECT
             *
         FROM
-            `productVariations`
+            productVariations
         WHERE
-            `products`.`id` = `productVariations`.`productId`
+            products.id = productVariations.productId
             AND(
-                `price` > 4000
+                price > 4000
                 AND EXISTS(
                     SELECT
                         *
                     FROM
-                        `productProperties`
+                        productProperties
                     WHERE
-                        `productVariations`.`id` = `productProperties`.`productVariationId`
-                        AND `propertyId` = 1
-                        AND `propertyValueId` IN(18)
+                        productVariations.id = productProperties.productVariationId
+                        AND propertyId = 1
+                        AND propertyValueId IN(18)
                 )
                 OR EXISTS(
                     SELECT
                         *
                     FROM
-                        `productProperties`
+                        productProperties
                     WHERE
-                        `productVariations`.`id` = `productProperties`.`productVariationId`
-                        AND `propertyId` = 8
-                        AND `propertyValueId` IN(22)
+                        productVariations.id = productProperties.productVariationId
+                        AND propertyId = 8
+                        AND propertyValueId IN(22)
                 )
             )
     );
