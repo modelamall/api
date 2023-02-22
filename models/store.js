@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "addressableId",
         constraints: false,
         scope: {
-          addressableType: "User",
+          addressableType: "Store",
         },
       });
       Store.hasMany(models.Product, {
