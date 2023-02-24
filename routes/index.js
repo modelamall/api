@@ -16,6 +16,7 @@ router.use("/color", require("../lib/color/routers"));
 router.use("/address", require("../lib/address/routers"));
 router.use("/filter", require("../lib/filter/routers"));
 router.use("/property", require("../lib/property/routers"));
+router.use("/propertyvalue", require("../lib/propertyValues/routers"));
 router.use("/picture", require("../lib/picture/routers"));
 router.use("/productProperty", require("../lib/productProperty/routers"));
 
